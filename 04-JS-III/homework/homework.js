@@ -192,7 +192,8 @@ function empiezaConNueve(n) {
 function todosIguales(arreglo) {
   //Escriba la función todosIguales, que indique si todos los elementos de un arreglo son iguales:
   //retornar true, caso contrario retornar false.
-  //Escribe tu código aquí  
+  //Escribe tu código aquí 
+  return arreglo.every(t => arreglo[0] == t);
   
 } 
 
@@ -202,6 +203,19 @@ function mesesDelAño(array) {
   // "Enero", "Marzo" y "Noviembre", guardarlo en nuevo array y retornarlo.
   //Si alguno de los meses no está, devolver: "No se encontraron los meses pedidos"
   // Tu código:
+  var array2=[];
+  for(var i in array){
+    if(array[i]=="Enero" || array[i]=="Marzo" || array[i]=="Noviembre"){
+      array2.push(array[i]);
+    }
+  }
+    if(array2.length!==3){
+      return "No se encontraron los meses pedidos";
+    }
+
+   if(array2[0]=="Enero" || array2[0]=="Marzo" || array2[0]=="Noviembre" && array2[1]=="Enero" || array2[1]=="Marzo" || array2[1]=="Noviembre" && array2[2]=="Enero" || array2[2]=="Marzo" || array2[2]=="Noviembre"){
+    return array2;
+  }
 }
 
 
@@ -209,6 +223,13 @@ function mayorACien(array) {
   //La función recibe un array con enteros entre 0 y 200. Recorrer el array y guardar en un nuevo array sólo los
   //valores mayores a 100 (no incluye el 100). Finalmente devolver el nuevo array.
   // Tu código:
+  var array2=[];
+  for(var i in array){
+    if(array[i]>100){
+      array2.push(array[i]);
+    }
+  }
+  return array2;
 }
 
 
@@ -220,6 +241,20 @@ function breakStatement(numero) {
   //devolver: "Se interrumpió la ejecución"
   //Pista: usá el statement 'break'
   // Tu código:
+  var array2 = [];
+  var suma =0;
+  var j=0;
+  for(var i = 1; i <= 10; i++){
+      array2.push(numero+=2);
+  }
+  for(var i in array2){
+      suma=array2[i]+suma;
+      j++;
+      if(j==suma){
+         return "Se interrumpió la ejecución";
+      }
+  }
+  return array2;
 }
 
 
@@ -230,6 +265,12 @@ function continueStatement(numero) {
   //Cuando el número de iteraciones alcance el valor 5, no se suma en ese caso y se continua con la siguiente iteración
   //Pista: usá el statement 'continue'
   // Tu código:
+  var array2 = [];
+  for(var i = 1; i <= 10; i++){
+      if(i===5) continue;
+      array2.push(numero+=2);
+  }
+  return array2;
 }
 
 
